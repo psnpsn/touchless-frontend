@@ -1,0 +1,15 @@
+<nb-card size="medium">
+    <nb-card-header>
+      <h3>HandWash Analytics</h3>
+      <div class="subtitle">Count</div>
+    </nb-card-header>
+    <nb-card-body>
+      <div class="chart-container">
+        <div class="chart-header">
+          <app-legend-chart [legendItems]="chartLegend"></app-legend-chart>
+        </div>
+        <app-handwash-analytics-chart [chartData]="handWashAnalyticsData"></app-handwash-analytics-chart>
+      </div>
+    </nb-card-body>
+  </nb-card>
+  

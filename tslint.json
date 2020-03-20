@@ -1,5 +1,8 @@
 {
-  "extends": "tslint:recommended",
+  "extends": [
+    "tslint:recommended",
+    "rxjs-tslint-rules"
+  ],
   "rules": {
     "array-type": false,
     "arrow-parens": false,
@@ -83,7 +86,15 @@
     "template-banana-in-box": true,
     "template-no-negated-async": true,
     "use-lifecycle-interface": true,
-    "use-pipe-transform-interface": true
+    "use-pipe-transform-interface": true,
+    "rxjs-add": true,
+    "rxjs-no-ignored-subscription": true,
+    "rxjs-no-ignored-subscribe": true,
+    "rxjs-no-ignored-observable": true,
+    "rxjs-no-ignored-error": true,
+    "rxjs-no-nested-subscribe": true,
+    "rxjs-no-unsafe-takeunti": true,
+    "rxjs-prefer-async-pipe": true
   },
   "rulesDirectory": [
     "codelyzer"

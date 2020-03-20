@@ -1,0 +1,17 @@
+<nb-layout windowMode>
+    <nb-layout-header fixed>
+      <app-header class="appfixed"></app-header>
+    </nb-layout-header>
+  
+    <nb-sidebar class="menu-sidebar" tag="menu-sidebar" responsive>
+      <nb-menu [items]="menu"></nb-menu>
+    </nb-sidebar>
+  
+    <nb-layout-column>
+      <ng-content select="router-outlet"></ng-content>
+    </nb-layout-column>
+  
+    <nb-layout-footer fixed>
+      <app-footer></app-footer>
+    </nb-layout-footer>
+  </nb-layout>

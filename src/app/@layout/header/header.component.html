@@ -1,0 +1,21 @@
+<div class="navbar">
+    <div class="logo-container">
+      <a class="logo" href="#" (click)="navigateHome()"><span class="touchless">Touchless</span></a>
+    </div>
+    <div>
+      <nb-actions class="nav-links" size="small">
+        <nb-action>
+          <nb-select [selected]="currentTheme" (selectedChange)="changeTheme($event)" status="primary">
+            <nb-option *ngFor="let theme of themes" [value]="theme.value"> {{ theme.name }}</nb-option>
+          </nb-select>
+        </nb-action>
+        <nb-action class="nav-item" icon="email-outline"></nb-action>
+        <nb-action class="nav-item" icon="bell-outline"></nb-action>
+        <nb-action>
+          <nb-user name="System Admin" title="Administrator" picture="assets/images/avatar.png"></nb-user>
+        </nb-action>
+      </nb-actions>
+      
+    </div>
+</div>
+  

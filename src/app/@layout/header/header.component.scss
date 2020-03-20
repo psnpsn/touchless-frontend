@@ -1,0 +1,36 @@
+.navbar {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    width:100%
+}
+
+.logo-container {
+    display:flex;
+    justify-content: space-around;
+  }
+
+  .logo-container a {
+    text-decoration: none;
+    padding-left: 50px;
+    padding-top: 10px;
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style: none;
+  }
+  
+nb-icon {
+    font-size:2rem;
+}
+
+.touchless {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 29px;
+  letter-spacing: 3px;
+  font-weight: bold;
+}
+
+  
+  
