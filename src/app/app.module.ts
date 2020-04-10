@@ -9,6 +9,7 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { CoreModule } from './@core/core.module';
 import { LayoutModule } from './@layout/layout.module';
 import { PagesModule } from './pages/pages.module';
+import { RootStoreModule } from './root-store/root-store.module';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { PagesModule } from './pages/pages.module';
     NbEvaIconsModule,
     HttpClientModule,
     CoreModule.forRoot(),
+    RootStoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
