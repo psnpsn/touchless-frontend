@@ -1,1 +1,11 @@
-<p>users works!</p>
+<nb-card>
+    <nb-card-header>
+      Users Table
+    </nb-card-header>
+  
+    <nb-card-body>
+      <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)">
+      </ng2-smart-table>
+    </nb-card-body>
+  </nb-card>
+  

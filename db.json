@@ -1,0 +1,25 @@
+{
+    "users": [{
+        "id":1,
+        "username":"psn",
+        "email":"psn@m",
+        "firstname":"psn",
+        "lastname":"psn",
+        "telephone":"2133321",
+        "address":"psn, psn psn",
+        "lastLogin":"13/12",
+        "creatingDate":"11/12",
+        "avatar":"urii"
+      }, {
+        "id":2,
+        "username":"psn2",
+        "email":"psn@m2",
+        "firstname":"psn",
+        "lastname":"psn",
+        "telephone":"2133321",
+        "address":"psn, psn psn",
+        "lastLogin":"13/12",
+        "creatingDate":"11/12",
+        "avatar":"urii"
+      }]
+  }

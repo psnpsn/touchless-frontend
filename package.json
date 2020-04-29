@@ -7,10 +7,12 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "api": "json-server db.json --routes routes.json --no-cors=false"
   },
   "private": true,
   "dependencies": {
+    "@akveo/ng2-completer": "^9.0.1",
     "@angular/animations": "^9.0.1",
     "@angular/cdk": "^9.0.0",
     "@angular/common": "~9.0.1",
@@ -25,9 +27,13 @@
     "@nebular/theme": "^4.6.0",
     "@ngrx/core": "^1.2.0",
     "@ngrx/effects": "^9.0.0",
+    "@ngrx/entity": "^9.1.0",
     "@ngrx/store": "^9.0.0",
+    "@ngrx/store-devtools": "^9.1.0",
     "echarts": "^4.6.0",
     "eva-icons": "^1.1.2",
+    "json-server": "^0.16.1",
+    "ng2-smart-table": "^1.6.0",
     "ngx-echarts": "^4.2.2",
     "rxjs": "~6.5.4",
     "rxjs-tslint-rules": "^4.29.1",
