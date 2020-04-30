@@ -5855,6 +5855,11 @@ nanomatch@^1.2.9:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
+nebular-icons@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/nebular-icons/-/nebular-icons-1.1.0.tgz#83a725822f963a60636e54be6c7145eff2306d3f"
+  integrity sha512-4TkJgDrjXw8qsOsc2NN6OBlRJYAJJpvqtjV+gpv+NV6amPgMPQNNuEvbenYXAMFmjs3uShgKOvmpnCX8Ua1oWQ==
+
 negotiator@0.6.2:
   version "0.6.2"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.2.tgz#feacf7ccf525a77ae9634436a64883ffeca346fb"

@@ -1,9 +1,10 @@
 export interface Gateway {
     id: string;
+    ipA: string;
     siteId: string;
     coordinates: string;
-    lastUpdate: string;
     currentVersion: string;
     status: boolean;
-    reference: string;
+    boardModel: string;
+    tapwaterIds: string[];
 }

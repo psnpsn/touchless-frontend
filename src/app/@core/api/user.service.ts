@@ -9,25 +9,26 @@ import { User } from 'src/app/models/user';
 export class UserService {
 
   http: HttpClient;
+  private path = 'http://localhost:3000/api/users';
 
   constructor(http: HttpClient) {
     this.http = http;
   }
 
   getAllUsers(): Observable<User[]> {
-    return this.http.get<User[]>('http://localhost:3000/api/users');
+    return this.http.get<User[]>(this.path);
   }
 
   createUser(user: User): Observable<User> {
-    return this.http.post<User>('', user);
+    return this.http.post<User>(this.path, user);
   }
 
   deleteUser(userId: string): Observable<any> {
-    return this.http.delete('api' + userId);
+    return this.http.delete(this.path + '/' + userId);
   }
 
-  updateUser(userId: string, changes: Partial<User>): Observable<any> {
-    return this.http.put('' + userId, changes);
+  updateUser(userId: string | number, changes: Partial<User>): Observable<any> {
+    return this.http.put(this.path + '/' + userId, changes);
   }
 
 }

@@ -1,25 +1,196 @@
 {
-    "users": [{
-        "id":1,
-        "username":"psn",
-        "email":"psn@m",
-        "firstname":"psn",
-        "lastname":"psn",
-        "telephone":"2133321",
-        "address":"psn, psn psn",
-        "lastLogin":"13/12",
-        "creatingDate":"11/12",
-        "avatar":"urii"
-      }, {
-        "id":2,
-        "username":"psn2",
-        "email":"psn@m2",
-        "firstname":"psn",
-        "lastname":"psn",
-        "telephone":"2133321",
-        "address":"psn, psn psn",
-        "lastLogin":"13/12",
-        "creatingDate":"11/12",
-        "avatar":"urii"
-      }]
-  }
+  "users": [
+    {
+      "id": 1,
+      "username": "psn",
+      "email": "psn@m",
+      "firstname": "psn",
+      "lastname": "psn",
+      "telephone": "2133321",
+      "address": "psn, psn psn",
+      "lastLogin": "13/12",
+      "creatingDate": "11/12",
+      "avatar": "urii"
+    },
+    {
+      "id": 2,
+      "username": "nsp",
+      "email": "psn@m2",
+      "firstname": "psn",
+      "lastname": "psn",
+      "telephone": "2133321",
+      "address": "psn, psn psn",
+      "lastLogin": "13/12",
+      "creatingDate": "11/12",
+      "avatar": "urii"
+    },
+    {
+      "id": 3,
+      "username": "useruser2",
+      "email": "",
+      "firstname": "",
+      "lastname": "",
+      "telephone": "",
+      "address": "",
+      "lastLogin": "",
+      "creatingDate": ""
+    },
+    {
+      "id": 4,
+      "username": "econduser",
+      "email": "",
+      "firstname": "",
+      "lastname": "",
+      "telephone": "",
+      "address": "",
+      "lastLogin": "",
+      "creatingDate": ""
+    }
+  ],
+  "sites": [
+    {
+      "id": 1,
+      "name": "ESPRIT Ecole Primaire",
+      "address": "Ghazela, Technopole",
+      "email": "administration@esprit.tn",
+      "telephone": "2133321",
+      "fax": "0922223",
+      "owner": "ESPRIT Group",
+      "gatewayIds": []
+    }
+  ],
+  "agents": [
+    {
+      "id": 1,
+      "status": "pupil",
+      "lastname": "Ben Foulen",
+      "firstname": "Foulen",
+      "email": "foo.len@esprit.tn",
+      "telephone": "2323232",
+      "wristbandId": 2
+    },
+    {
+      "id": 2,
+      "status": "pupil",
+      "lastname": "Ben2 Foulen2",
+      "firstname": "Foulen2",
+      "email": "foo2.len2@esprit.tn",
+      "telephone": "2323232",
+      "wristbandId": 1
+    },
+    {
+      "id": 3,
+      "status": "pupil",
+      "lastname": "Ben3 Foulen3",
+      "firstname": "Foulen3",
+      "email": "foo3.len@esprit.tn",
+      "telephone": "2323232",
+      "wristbandId": 3
+    }
+  ],
+  "wristbands": [
+    {
+      "id": 1,
+      "agentId": 2,
+      "model": "Wearables Corp Model V1"
+    },
+    {
+      "id": 2,
+      "agentId": 1,
+      "model": "Wearables Corp Model V1"
+    },
+    {
+      "id": 3,
+      "agentId": 3,
+      "model": "Wearables Corp Model V1"
+    }
+
+  ],
+  "gateways": [
+    {
+      "id": 1,
+      "ipA":"192.168.10.100",
+      "siteId": 1,
+      "coordinates": "GeoP 100.3 V",
+      "currentVersion": "v1.0.1",
+      "status": "on",
+      "boardModel": "Raspberry PI 4",
+      "tapwaterIds": []
+    },
+    {
+      "id": 2,
+      "ipA":"192.168.10.101",
+      "siteId": 1,
+      "coordinates": "GeoP 104.2 V",
+      "currentVersion": "v1.0.1",
+      "status": "on",
+      "boardModel": "Raspberry PI 4",
+      "tapwaterIds": []
+    },
+    {
+      "id": 3,
+      "ipA":"192.168.10.102",
+      "siteId": 1,
+      "coordinates": "GeoP 110.0 V",
+      "currentVersion": "v1.0.1",
+      "status": "on",
+      "boardModel": "Raspberry PI 4",
+      "tapwaterIds": []
+    },
+    {
+      "id": 4,
+      "ipA":"192.168.10.103",
+      "siteId": 1,
+      "coordinates": "GeoP 105.3 V",
+      "currentVersion": "v1.0.0",
+      "status": "on",
+      "boardModel": "Raspberry PI 4",
+      "tapwaterIds": []
+    }
+  ],
+  "tapwaters": [
+    {
+      "id": 1,
+      "gatewayId": 1,
+      "sensorIds": [],
+      "status": "off-nolk",
+      "boardModel": "Raspberry PI 3B+",
+      "tapModel": "CERAMA Robinet ALM302",
+      "installDate": "05-02-2020",
+      "currentVersion": "v1.0.1"
+    },
+    {
+      "id": 2,
+      "gatewayId": 1,
+      "sensorIds": [],
+      "status": "off-nolk",
+      "boardModel": "Raspberry PI 3B+",
+      "tapModel": "CERAMA Robinet ALM302",
+      "installDate": "05-02-2020",
+      "currentVersion": "v1.0.1"
+    },
+    {
+      "id": 3,
+      "gatewayId": 2,
+      "sensorIds": [],
+      "status": "off-nolk",
+      "boardModel": "Raspberry PI 3B+",
+      "tapModel": "CERAMA Robinet ALM302",
+      "installDate": "06-02-2020",
+      "currentVersion": "v1.0.1"
+    },
+    {
+      "id": 4,
+      "gatewayId": 3,
+      "sensorIds": [],
+      "status": "off-nolk",
+      "boardModel": "Raspberry PI 3B+",
+      "tapModel": "CERAMA Robinet ALM302",
+      "installDate": "07-02-2020",
+      "currentVersion": "v1.0.1"
+    }
+  ],
+  "sensors": [
+    
+  ]
+}

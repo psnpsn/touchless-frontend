@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
-import { UserService } from 'src/app/@core/api/user.service';
+import { AgentService } from 'src/app/@core/api/agent.service';
 import { Store } from '@ngrx/store';
-import { UserStoreSelectors, UserStoreState } from 'src/app/@store/users';
-import { GetUsersRequestAction, AddUserAction, RemoveUserAction, UpdateUserAction } from 'src/app/@store/users/actions';
+import { AgentStoreState, AgentStoreSelectors } from 'src/app/@store/agent';
+import { GetAgentsRequestAction, RemoveAgentAction, AddAgentAction, UpdateAgentAction } from 'src/app/@store/agent/actions';
 import { Update } from '@ngrx/entity';
-import { User } from 'src/app/models/user';
+import { Agent } from 'src/app/models/agent';
 
 @Component({
-  selector: 'app-users',
-  templateUrl: './users.component.html',
-  styleUrls: ['./users.component.scss']
+  selector: 'app-agents',
+  templateUrl: './agents.component.html',
+  styleUrls: ['./agents.component.scss']
 })
-export class UsersComponent implements OnInit {
+export class AgentsComponent implements OnInit {
 
   settings = {
     add: {
@@ -36,8 +36,8 @@ export class UsersComponent implements OnInit {
         title: 'ID',
         type: 'string',
       },
-      username: {
-        title: 'Username',
+      status: {
+        title: 'Status',
         type: 'string',
       },
       email: {
@@ -56,16 +56,8 @@ export class UsersComponent implements OnInit {
         title: 'Telephone',
         type: 'number',
       },
-      address: {
-        title: 'Address',
-        type: 'string',
-      },
-      lastLogin: {
-        title: 'Last Login',
-        type: 'string',
-      },
-      creatingDate: {
-        title: 'Create Date',
+      wristbandId: {
+        title: 'WristBand ID',
         type: 'string',
       },
     },
@@ -73,34 +65,23 @@ export class UsersComponent implements OnInit {
 
   source: LocalDataSource = new LocalDataSource();
 
-  constructor(private userService: UserService, private store: Store<UserStoreState.State>) { }
+  constructor(private agentService: AgentService, private store: Store<AgentStoreState.State>) { }
 
   ngOnInit(): void {
 
-    this.store.dispatch(GetUsersRequestAction());
+    this.store.dispatch(GetAgentsRequestAction());
 
-    this.store.select(UserStoreSelectors.selectAllUsers).subscribe( (data) => {
+    this.store.select(AgentStoreSelectors.selectAllAgents).subscribe( (data) => {
       this.source.load(data);
       console.log('STORE DATA:');
       console.log(data);
     });
-
-    // this.store.select(UsersStoreSelectors.selectAllUsers).subscribe( (data) => {
-    //   this.source.load(data);
-    //   console.log('STORE DATA:');
-    //   console.log(data);
-    // });
-
-    // this.userService.getAllUsers().subscribe( (data) => {
-    //   this.source.load(data);
-    //   console.log(data);
-    // });
   }
 
   onDeleteConfirm(event): void {
     if (window.confirm('Are you sure you want to delete?')) {
       console.log('deleting!');
-      this.store.dispatch(RemoveUserAction({ payload: { message: event.data.id } }));
+      this.store.dispatch(RemoveAgentAction({ payload: { message: event.data.id } }));
       event.confirm.resolve();
     } else {
       event.confirm.reject();
@@ -109,20 +90,20 @@ export class UsersComponent implements OnInit {
 
   onCreate(event): void {
     console.log('created!');
-    this.store.dispatch(AddUserAction({ payload: event.newData }));
+    this.store.dispatch(AddAgentAction({ payload: event.newData }));
     event.confirm.resolve();
   }
 
   onEdit(event): void {
     console.log('updated!');
-    const update: Update<User> = {
+    const update: Update<Agent> = {
       id: event.data.id,
       changes: {
         ...event.data,
         ...event.newData
       }
     }
-    this.store.dispatch(UpdateUserAction({payload: update}));
+    this.store.dispatch(UpdateAgentAction({payload: update}));
     event.confirm.resolve();
   }
 

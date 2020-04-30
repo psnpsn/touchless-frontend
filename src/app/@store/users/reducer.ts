@@ -1,45 +1,51 @@
 
-import { usersAdapter, initialState, State } from './state';
+import { userAdapter, initialState, State } from './state';
 import { createReducer, on, Action } from '@ngrx/store';
-import { ActionTypes, usersActions } from './actions';
+import { userActions } from './actions';
 
 const _reducer = createReducer(
     initialState,
-    on(usersActions.GetUsersSuccessAction, (state, {payload}) => {
-        return usersAdapter.setAll(
+    on(userActions.GetUsersSuccessAction, (state, {payload}) => {
+        return userAdapter.setAll(
             payload.items,
             {...state, isLoading: false, error: null}
         );
     }),
-    on(usersActions.GetUsersFailureAction, (state, {payload}) => {
+    on(userActions.GetUsersFailureAction, (state, {payload}) => {
         return {
             ...state,
             isLoading: false,
             error: payload.error
         };
     }),
-    on(usersActions.GetUsersRequestAction, state => {
+    on(userActions.GetUsersRequestAction, state => {
         return {
             ...state,
             isLoading: true,
             error: null
         };
     }),
-    on(usersActions.AddUserAction, (state, {payload}) => {
-        return usersAdapter.addOne(
+    on(userActions.AddUserAction, (state, {payload}) => {
+        return userAdapter.addOne(
             payload,
             state
         );
     }),
-    on(usersActions.RemoveUserAction, (state, {payload}) => {
-        return usersAdapter.removeOne(
+    on(userActions.RemoveUserAction, (state, {payload}) => {
+        return userAdapter.removeOne(
             payload.message,
+            state
+        );
+    }),
+    on(userActions.UpdateUserAction, (state, {payload}) => {
+        return userAdapter.updateOne(
+            payload,
             state
         );
     })
 
 );
 
-export function usersReducer(state: State | undefined, action: Action) {
+export function userReducer(state: State | undefined, action: Action) {
     return _reducer(state, action);
 }

@@ -3,8 +3,8 @@ export interface Site {
     name: string;
     address: string;
     email: string;
-    telephone: number;
-    fax: number;
+    telephone: string;
+    fax: string;
     owner: string;
-    concernedEntityName: string;
+    gatewayIds: string[];
 }

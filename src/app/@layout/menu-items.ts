@@ -13,21 +13,37 @@ export const MENU_ITEMS: NbMenuItem[] = [
     link: '/map',
   },
   {
-    title: 'Database',
+    title: 'App Users',
+    link: '/users',
+  },
+  {
+    title: 'Agents',
+    link: '/agents',
+  },
+  {
+    title: 'Sites',
+    link: '/sites',
+  },
+  {
+    title: 'Devices',
     icon: 'save-outline',
     children: [
       {
-        title: 'Users',
-        link: '/db/users',
+        title: 'Wristbands',
+        link: '/devices/wristbands'
       },
       {
-        title: 'Pupils',
-        link: '/db/pupils',
+        title: 'Gateways',
+        link: '/devices/gateways'
       },
       {
-        title: 'Taps',
-        link: '/db/taps',
+        title: 'Tapwater',
+        link: '/devices/tapwater'
       },
-    ],
+      {
+        title: 'Sensors',
+        link: '/devices/sensors'
+      }
+    ]
   }
 ];
