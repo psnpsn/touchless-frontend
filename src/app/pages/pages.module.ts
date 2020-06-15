@@ -12,11 +12,31 @@ import { UserStoreModule } from '../@store/users/user-store.module';
 import { AgentsComponent } from './agents/agents.component';
 import { AgentStoreModule } from '../@store/agent';
 import { SitesComponent } from './sites/sites.component';
+import { SiteStoreModule } from '../@store/site';
+import { GatewayComponent } from './gateway/gateway.component';
+import { TapwaterComponent } from './tapwater/tapwater.component';
+import { SensorComponent } from './sensor/sensor.component';
+import { WristbandComponent } from './wristband/wristband.component';
+import { GatewayStoreModule } from '../@store/gateway';
+import { TapwaterStoreModule } from '../@store/tapwater';
+import { SensorStoreModule } from '../@store/sensor';
+import { WristbandStoreModule } from '../@store/wristband';
+import { AuthGuard } from '../auth-guard.service';
+import { AuthStoreModule } from '../@store/auth';
 
 
 
 @NgModule({
-  declarations: [PagesComponent, UsersComponent, AgentsComponent, SitesComponent],
+  declarations: [
+    PagesComponent,
+    UsersComponent,
+    AgentsComponent,
+    SitesComponent,
+    GatewayComponent,
+    TapwaterComponent,
+    SensorComponent,
+    WristbandComponent
+  ],
   imports: [
     CommonModule,
     LayoutModule,
@@ -28,7 +48,14 @@ import { SitesComponent } from './sites/sites.component';
     NbIconModule,
     UserStoreModule,
     AgentStoreModule,
-
+    SiteStoreModule,
+    GatewayStoreModule,
+    TapwaterStoreModule,
+    SensorStoreModule,
+    WristbandStoreModule,
+  ],
+  providers: [
+    AuthGuard
   ]
 })
 export class PagesModule { }

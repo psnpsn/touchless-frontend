@@ -2,8 +2,9 @@
   "users": [
     {
       "id": 1,
-      "username": "psn",
-      "email": "psn@m",
+      "role": "ESP01",
+      "username": "esp1",
+      "email": "esp1",
       "firstname": "psn",
       "lastname": "psn",
       "telephone": "2133321",
@@ -14,8 +15,9 @@
     },
     {
       "id": 2,
-      "username": "nsp",
-      "email": "psn@m2",
+      "role": "ADMIN",
+      "username": "iosys",
+      "email": "iosys",
       "firstname": "psn",
       "lastname": "psn",
       "telephone": "2133321",
@@ -25,19 +27,9 @@
       "avatar": "urii"
     },
     {
-      "id": 3,
-      "username": "useruser2",
-      "email": "",
-      "firstname": "",
-      "lastname": "",
-      "telephone": "",
-      "address": "",
-      "lastLogin": "",
-      "creatingDate": ""
-    },
-    {
       "id": 4,
-      "username": "econduser",
+      "role": "ESP02",
+      "username": "esp1",
       "email": "",
       "firstname": "",
       "lastname": "",
@@ -49,19 +41,28 @@
   ],
   "sites": [
     {
-      "id": 1,
-      "name": "ESPRIT Ecole Primaire",
+      "id": "ESP01",
+      "name": "ESPRIT Ecole Primaire GHAZELA",
       "address": "Ghazela, Technopole",
-      "email": "administration@esprit.tn",
-      "telephone": "2133321",
+      "email": "ecpghazela@esprit.tn",
+      "telephone": "22344566",
       "fax": "0922223",
-      "owner": "ESPRIT Group",
-      "gatewayIds": []
+      "owner": "ESPRIT Group"
+    },
+    {
+      "id": "ESP02",
+      "name": "ESPRIT Ecole Primaire CHARGUIA",
+      "address": "Charguia 2, Centre Urban Nord",
+      "email": "ecpcharguia@esprit.tn",
+      "telephone": "22433566",
+      "fax": "0822223",
+      "owner": "ESPRIT Group"
     }
   ],
   "agents": [
     {
       "id": 1,
+      "siteId": "ESP01",
       "status": "pupil",
       "lastname": "Ben Foulen",
       "firstname": "Foulen",
@@ -71,6 +72,7 @@
     },
     {
       "id": 2,
+      "siteId": "ESP01",
       "status": "pupil",
       "lastname": "Ben2 Foulen2",
       "firstname": "Foulen2",
@@ -80,6 +82,7 @@
     },
     {
       "id": 3,
+      "siteId": "ESP02",
       "status": "pupil",
       "lastname": "Ben3 Foulen3",
       "firstname": "Foulen3",
@@ -103,14 +106,18 @@
       "id": 3,
       "agentId": 3,
       "model": "Wearables Corp Model V1"
+    },
+    {
+      "id": "6",
+      "agentId": "20",
+      "model": "ModelV"
     }
-
   ],
   "gateways": [
     {
       "id": 1,
-      "ipA":"192.168.10.100",
-      "siteId": 1,
+      "ipA": "192.168.10.100",
+      "siteId": "ESP01",
       "coordinates": "GeoP 100.3 V",
       "currentVersion": "v1.0.1",
       "status": "on",
@@ -119,8 +126,8 @@
     },
     {
       "id": 2,
-      "ipA":"192.168.10.101",
-      "siteId": 1,
+      "ipA": "192.168.10.101",
+      "siteId": "ESP01",
       "coordinates": "GeoP 104.2 V",
       "currentVersion": "v1.0.1",
       "status": "on",
@@ -129,8 +136,8 @@
     },
     {
       "id": 3,
-      "ipA":"192.168.10.102",
-      "siteId": 1,
+      "ipA": "192.168.10.102",
+      "siteId": "ESP01",
       "coordinates": "GeoP 110.0 V",
       "currentVersion": "v1.0.1",
       "status": "on",
@@ -139,8 +146,8 @@
     },
     {
       "id": 4,
-      "ipA":"192.168.10.103",
-      "siteId": 1,
+      "ipA": "192.168.10.103",
+      "siteId": "ESP02",
       "coordinates": "GeoP 105.3 V",
       "currentVersion": "v1.0.0",
       "status": "on",
@@ -191,6 +198,53 @@
     }
   ],
   "sensors": [
-    
+    {
+      "id": 1,
+      "measuredParam": "water flow",
+      "model": "AQUA WS00",
+      "tapwaterId": "4"
+    },
+    {
+      "id": 2,
+      "measuredParam": "water flow",
+      "model": "AQUA WS00",
+      "tapwaterId": "3"
+    },
+    {
+      "id": 3,
+      "measuredParam": "water flow",
+      "model": "AQUA WS00",
+      "tapwaterId": "1"
+    },
+    {
+      "id": 4,
+      "measuredParam": "water flow",
+      "model": "AQUA WS00",
+      "tapwaterId": "2"
+    },
+    {
+      "id": 5,
+      "measuredParam": "infrared",
+      "model": "INTEL IR-Z",
+      "tapwaterId": "1"
+    },
+    {
+      "id": 6,
+      "measuredParam": "infrared",
+      "model": "INTEL IR-Z",
+      "tapwaterId": "2"
+    },
+    {
+      "id": 7,
+      "measuredParam": "infrared",
+      "model": "INTEL IR-Z",
+      "tapwaterId": "3"
+    },
+    {
+      "id": 8,
+      "measuredParam": "infrared",
+      "model": "INTEL IR-Z",
+      "tapwaterId": "4"
+    }
   ]
 }

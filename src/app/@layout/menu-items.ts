@@ -29,10 +29,6 @@ export const MENU_ITEMS: NbMenuItem[] = [
     icon: 'save-outline',
     children: [
       {
-        title: 'Wristbands',
-        link: '/devices/wristbands'
-      },
-      {
         title: 'Gateways',
         link: '/devices/gateways'
       },
@@ -43,6 +39,10 @@ export const MENU_ITEMS: NbMenuItem[] = [
       {
         title: 'Sensors',
         link: '/devices/sensors'
+      },
+      {
+        title: 'Wristbands',
+        link: '/devices/wristbands'
       }
     ]
   }

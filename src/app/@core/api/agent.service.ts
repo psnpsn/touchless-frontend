@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Agent } from 'src/app/models/agent';
+import { GlobalConstants } from 'src/app/global';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ import { Agent } from 'src/app/models/agent';
 export class AgentService {
 
   http: HttpClient;
-  private path = 'http://localhost:3000/api/agents';
+  private path = GlobalConstants.api + 'agent/agent/';
 
   constructor(http: HttpClient) {
     this.http = http;
@@ -20,6 +21,8 @@ export class AgentService {
   }
 
   createAgent(agent: Agent): Observable<Agent> {
+    console.log('Agent :');
+    console.log(agent);
     return this.http.post<Agent>(this.path, agent);
   }
 

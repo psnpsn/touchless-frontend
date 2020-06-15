@@ -1,0 +1,71 @@
+<form (ngSubmit)="onSubmit()" ngNativeValidate>
+
+    <label class="label" for="input-email">*Email:</label>
+    <input 
+        id="input-email"
+        name="email"
+        [(ngModel)]="user.email" 
+        type="email"
+        nbInput 
+        required
+        placeholder="Email">
+
+    <label class="label" for="input-firstname">*Firstname:</label> 
+    <input 
+        id="input-firstname"
+        name="firstname"
+        [(ngModel)]="user.firstname"
+        type="text" 
+        nbInput 
+        required
+        placeholder="Firstname">
+
+    <label class="label" for="input-lastname">*Lastname:</label> 
+    <input 
+        id="input-lastname"
+        name="lastname"
+        [(ngModel)]="user.lastname"
+        type="text" 
+        nbInput 
+        required
+        placeholder="Lastname">
+
+    <label class="label" for="input-phone">Phone Number:</label> 
+    <input 
+        id="input-phone"
+        name="phone"
+        [(ngModel)]="user.phone"
+        type="tel" 
+        nbInput 
+        placeholder="Phone Number">
+
+    <label class="label" for="input-address">Address:</label> 
+    <input 
+        id="input-address"
+        name="address"
+        [(ngModel)]="user.address"
+        type="text" 
+        nbInput 
+        placeholder="Address">
+
+    <label class="label" for="input-username">*Username:</label> 
+    <input 
+        id="input-username"
+        name="username"
+        [(ngModel)]="user.username"
+        type="text" 
+        nbInput 
+        required
+        placeholder="Username">
+
+    <label class="label" for="input-password">*Password:</label> 
+    <input 
+        id="input-password"
+        name="password"
+        [(ngModel)]="user.password"
+        type="password" 
+        nbInput 
+        required
+        placeholder="Password">
+    <button nbButton hero status="primary" type="submit">REGISTER</button>
+</form>

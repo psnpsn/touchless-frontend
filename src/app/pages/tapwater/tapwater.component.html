@@ -1,0 +1,11 @@
+<nb-card>
+    <nb-card-header>
+      Tapwater Table 
+    </nb-card-header>
+  
+    <nb-card-body>
+      <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)" (createConfirm)="onCreate($event)" (editConfirm)="onEdit($event)">
+      </ng2-smart-table>
+    </nb-card-body>
+  </nb-card>
+  

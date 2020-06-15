@@ -5,10 +5,17 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MapComponent } from './map/map.component';
 import { UsersComponent } from './users/users.component';
 import { AgentsComponent } from './agents/agents.component';
+import { SitesComponent } from './sites/sites.component';
+import { WristbandComponent } from './wristband/wristband.component';
+import { GatewayComponent } from './gateway/gateway.component';
+import { TapwaterComponent } from './tapwater/tapwater.component';
+import { SensorComponent } from './sensor/sensor.component';
+import { AuthGuard } from '../auth-guard.service';
 
 const routes: Routes = [{
   path: '',
   component: PagesComponent,
+  canActivate: [AuthGuard],
   children: [
     {
       path: 'dashboard',
@@ -17,6 +24,7 @@ const routes: Routes = [{
     {
       path: 'map',
       component: MapComponent,
+      canActivate: [AuthGuard]
     },
     {
       path: 'users',
@@ -28,23 +36,23 @@ const routes: Routes = [{
     },
     {
       path: 'sites',
-      component: MapComponent,
+      component: SitesComponent,
     },
     {
       path: 'devices/wristbands',
-      component: MapComponent,
+      component: WristbandComponent,
     },
     {
       path: 'devices/gateways',
-      component: MapComponent,
+      component: GatewayComponent,
     },
     {
       path: 'devices/tapwater',
-      component: MapComponent,
+      component: TapwaterComponent,
     },
     {
       path: 'devices/sensors',
-      component: MapComponent,
+      component: SensorComponent  ,
     }
   ]
 }];

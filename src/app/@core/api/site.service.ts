@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Site } from 'src/app/models/site';
 import { Observable } from 'rxjs';
+import { GlobalConstants } from 'src/app/global';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ import { Observable } from 'rxjs';
 export class SiteService {
 
   http: HttpClient;
-  private path = 'http://localhost:3000/api/sites';
+  private path = GlobalConstants.api + 'site';
 
   constructor(http: HttpClient) {
     this.http = http;

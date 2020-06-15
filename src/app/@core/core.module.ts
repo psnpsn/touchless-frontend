@@ -1,13 +1,12 @@
 import { NgModule, ModuleWithProviders, Optional, SkipSelf } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { NbAuthModule, NbDummyAuthStrategy } from '@nebular/auth';
-import { HandWashAnalyticsService } from './mock/handwash-analytics.service';
+import { CommonModule } from '@angular/common';import { HandWashAnalyticsService } from './mock/handwash-analytics.service';
 import { HandWashAnalyticsData } from './data/handwashAnalyticsData';
 import { MockDataModule } from './mock/mock-data.module';
 
 import { throwIfAlreadyLoaded } from './module-import-guard';
 import { LayoutService } from './utils/layout.service';
 import { ApiModule } from './api/api.module';
+import { AuthStoreModule } from '../@store/auth';
 
 const DATA_SERVICES = [
   { provide: HandWashAnalyticsData, useClass: HandWashAnalyticsService },
@@ -16,16 +15,6 @@ const DATA_SERVICES = [
 export const NB_CORE_PROVIDERS = [
   ...MockDataModule.forRoot().providers,
   ...DATA_SERVICES,
-  ...NbAuthModule.forRoot({
-
-    strategies: [
-      NbDummyAuthStrategy.setup({
-        name: 'email',
-        delay: 3000,
-      }),
-    ],
-    forms: {},
-  }).providers,
   LayoutService,
 ];
 
@@ -34,14 +23,7 @@ export const NB_CORE_PROVIDERS = [
   imports: [
     CommonModule,
     ApiModule,
-    NbAuthModule.forRoot({
-      strategies: [
-        NbDummyAuthStrategy.setup({
-          name: 'email',
-        }),
-      ],
-      forms: {},
-    }),
+    AuthStoreModule
   ]
 })
 export class CoreModule {

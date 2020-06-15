@@ -1,1 +1,12 @@
-<p>sites works!</p>
+<nb-card size="small" *ngFor="let site of sites$ | async">
+    <nb-card-header>
+        <nb-icon icon="home" class="icon-site"></nb-icon>
+        <h3>{{ site.name }}</h3>
+    </nb-card-header>
+    <nb-card-body>
+        <input type="text" nbInput placeholder="{{ site.id }}">
+    </nb-card-body>
+    <nb-card-footer>
+
+    </nb-card-footer>
+</nb-card> 

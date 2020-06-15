@@ -1,0 +1,27 @@
+.authcard {
+    background-color: blue;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.authcard-body {
+    background-color: blueviolet;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.authcard-header {
+    background-color: greenyellow;
+    margin-bottom: 20px;
+}
+
+.authcard-footer {
+    background-color: green;
+    margin-top: 30px;
+}

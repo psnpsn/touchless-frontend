@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from 'src/app/models/user';
+import { GlobalConstants } from 'src/app/global';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ import { User } from 'src/app/models/user';
 export class UserService {
 
   http: HttpClient;
-  private path = 'http://localhost:3000/api/users';
+  private path = GlobalConstants.api + 'user';
 
   constructor(http: HttpClient) {
     this.http = http;

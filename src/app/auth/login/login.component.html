@@ -1,0 +1,23 @@
+<form (ngSubmit)="onSubmit()" ngNativeValidate>
+
+    <label class="label" for="input-username">*Username:</label> 
+    <input 
+        id="input-username"
+        name="username"
+        [(ngModel)]="user.username"
+        type="text" 
+        nbInput 
+        required
+        placeholder="Username">
+
+    <label class="label" for="input-password">*Password:</label> 
+    <input 
+        id="input-password"
+        name="password"
+        [(ngModel)]="user.password"
+        type="password" 
+        nbInput 
+        required
+        placeholder="Password">
+    <button nbButton hero status="primary" type="submit">LOGIN</button>
+</form>

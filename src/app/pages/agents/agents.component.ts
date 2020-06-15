@@ -20,6 +20,7 @@ export class AgentsComponent implements OnInit {
       createButtonContent: '<i class="nb-checkmark"></i>',
       cancelButtonContent: '<i class="nb-close"></i>',
       confirmCreate: true,
+      mode: 'inline'
     },
     edit: {
       editButtonContent: '<i class="nb-edit"></i>',
@@ -35,6 +36,8 @@ export class AgentsComponent implements OnInit {
       id: {
         title: 'ID',
         type: 'string',
+        editable: false,
+        addable: false
       },
       status: {
         title: 'Status',
@@ -88,10 +91,11 @@ export class AgentsComponent implements OnInit {
     }
   }
 
-  onCreate(event): void {
+  onCreateConfirm(event): void {
+    event.confirm.resolve();
     console.log('created!');
     this.store.dispatch(AddAgentAction({ payload: event.newData }));
-    event.confirm.resolve();
+    this.source.refresh();
   }
 
   onEdit(event): void {

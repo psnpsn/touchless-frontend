@@ -4,7 +4,10 @@ export interface Site {
     address: string;
     email: string;
     telephone: string;
-    fax: string;
-    owner: string;
-    gatewayIds: string[];
+    telephone2: string;
+    ownerFullName: string;
+    contractDate: string;
+    installationData: string;
+    workingDate: string;
+    status: string;
 }

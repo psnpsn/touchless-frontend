@@ -35,6 +35,8 @@ export class UsersComponent implements OnInit {
       id: {
         title: 'ID',
         type: 'string',
+        editable: false,
+        addable: false
       },
       username: {
         title: 'Username',
@@ -84,17 +86,6 @@ export class UsersComponent implements OnInit {
       console.log('STORE DATA:');
       console.log(data);
     });
-
-    // this.store.select(UsersStoreSelectors.selectAllUsers).subscribe( (data) => {
-    //   this.source.load(data);
-    //   console.log('STORE DATA:');
-    //   console.log(data);
-    // });
-
-    // this.userService.getAllUsers().subscribe( (data) => {
-    //   this.source.load(data);
-    //   console.log(data);
-    // });
   }
 
   onDeleteConfirm(event): void {
@@ -109,6 +100,7 @@ export class UsersComponent implements OnInit {
 
   onCreate(event): void {
     console.log('created!');
+    console.log(event.newData);
     this.store.dispatch(AddUserAction({ payload: event.newData }));
     event.confirm.resolve();
   }

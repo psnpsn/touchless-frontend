@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthStoreState } from 'src/app/@store/auth';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { selectAuthUserProfile, selectAuthIsAuthenticated } from 'src/app/@store/auth/selectors';
 
 @Component({
   selector: 'app-map',
@@ -7,9 +11,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MapComponent implements OnInit {
 
-  constructor() { }
+  getUser: Observable<any>;
+  getIsAuthenticated: Observable<any>;
+
+  constructor(private store: Store<AuthStoreState.State>) {
+    this.getUser = this.store.select(selectAuthUserProfile);
+    this.getIsAuthenticated = this.store.select(selectAuthIsAuthenticated);
+  }
 
   ngOnInit(): void {
+    console.log(localStorage.getItem('access_token'));
+    this.getUser.subscribe( user => {
+      console.log(user);
+    });
+    this.getIsAuthenticated.subscribe( user => {
+      console.log(user);
+    });
   }
 
 }

@@ -23,7 +23,7 @@ export class HeaderComponent implements OnDestroy {
     },
   ];
 
-  currentTheme = 'dark';
+  currentTheme = 'default';
   userMenu = [ { title: 'Profile' }, { title: 'Log out' } ];
 
   constructor(private themeService: NbThemeService) { }

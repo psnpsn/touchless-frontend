@@ -1,5 +1,6 @@
-export interface TapWater {
+export interface Tapwater {
     id: string;
+    ipA: string;
     gatewayId: string;
     sensorIds: string[];
     status: string;
