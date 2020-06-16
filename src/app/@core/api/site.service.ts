@@ -10,7 +10,7 @@ import { GlobalConstants } from 'src/app/global';
 export class SiteService {
 
   http: HttpClient;
-  private path = GlobalConstants.api + 'site';
+  private path = GlobalConstants.api + 'site/site/';
 
   constructor(http: HttpClient) {
     this.http = http;

@@ -8,7 +8,10 @@ form {
 }
 
 label {
+    color: #838383;
+    font-family: Roboto,sans-serif;
     font-size: .75rem;
+    font-weight: 700;
     margin-bottom: 2px;
 }
 
@@ -19,6 +22,9 @@ input {
     line-height: 1.5rem;
     padding: 1rem;
     width: 400px;
+    border-radius: .25rem;
+    border-width: 1px;
+    border-style: solid;
 }
 
 button {

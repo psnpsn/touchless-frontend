@@ -10,7 +10,7 @@ import { GlobalConstants } from 'src/app/global';
 export class TapwaterService {
 
   http: HttpClient;
-  private path = GlobalConstants.api + 'tapwater';
+  private path = 'http://localhost:8084/tapwater/';
 
   constructor(http: HttpClient) {
     this.http = http;

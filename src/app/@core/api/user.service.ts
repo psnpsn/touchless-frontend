@@ -10,7 +10,7 @@ import { GlobalConstants } from 'src/app/global';
 export class UserService {
 
   http: HttpClient;
-  private path = GlobalConstants.api + 'user';
+  private path = GlobalConstants.api + 'user/user/';
 
   constructor(http: HttpClient) {
     this.http = http;

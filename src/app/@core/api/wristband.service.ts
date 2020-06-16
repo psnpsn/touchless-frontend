@@ -10,7 +10,7 @@ import { GlobalConstants } from 'src/app/global';
 export class WristbandService {
 
   http: HttpClient;
-  private path = GlobalConstants.api + 'wristband';
+  private path = 'http://localhost:8086/wristband/';
 
   constructor(http: HttpClient) {
     this.http = http;

@@ -10,7 +10,7 @@ import { GlobalConstants } from 'src/app/global';
 export class SensorService {
 
   http: HttpClient;
-  private path = GlobalConstants.api + 'sensor';
+  private path = 'http://localhost:8085/sensor/';
 
   constructor(http: HttpClient) {
     this.http = http;

@@ -21,6 +21,8 @@ export class MapComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(localStorage.getItem('access_token'));
+    console.log(localStorage.getItem('scope'));
+    console.log(localStorage.getItem('isAuthenticated'));
     this.getUser.subscribe( user => {
       console.log(user);
     });

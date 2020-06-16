@@ -10,7 +10,7 @@ import { GlobalConstants } from 'src/app/global';
 export class GatewayService {
 
   http: HttpClient;
-  private path = GlobalConstants.api + 'gateway';
+  private path = 'http://localhost:8083/gateway/';
 
   constructor(http: HttpClient) {
     this.http = http;

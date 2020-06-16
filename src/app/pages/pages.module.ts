@@ -23,6 +23,9 @@ import { SensorStoreModule } from '../@store/sensor';
 import { WristbandStoreModule } from '../@store/wristband';
 import { AuthGuard } from '../auth-guard.service';
 import { AuthStoreModule } from '../@store/auth';
+import { TapreadStoreModule } from '../@store/tapread';
+import { ComplianceStoreModule } from '../@store/compliance';
+import { TapreadComponent } from './tapread/tapread.component';
 
 
 
@@ -35,7 +38,9 @@ import { AuthStoreModule } from '../@store/auth';
     GatewayComponent,
     TapwaterComponent,
     SensorComponent,
-    WristbandComponent
+    WristbandComponent,
+    TapreadComponent
+
   ],
   imports: [
     CommonModule,
@@ -53,6 +58,8 @@ import { AuthStoreModule } from '../@store/auth';
     TapwaterStoreModule,
     SensorStoreModule,
     WristbandStoreModule,
+    TapreadStoreModule,
+    ComplianceStoreModule
   ],
   providers: [
     AuthGuard

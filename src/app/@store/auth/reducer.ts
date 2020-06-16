@@ -10,7 +10,11 @@ const _reducer = createReducer(
         return {
             ...state,
             isAuthenticated: false,
-            error: null
+            error: null,
+            userProfile: {
+                ...state.userProfile,
+                username: payload.username,
+            }
         };
     }),
     on(authActions.AuthLoginSuccessAction, (state, {payload}) => {
@@ -19,7 +23,6 @@ const _reducer = createReducer(
             ...state,
             isAuthenticated: true,
             error: null,
-            user: payload
         };
     }),
     on(authActions.AuthLoginFailureAction, (state, {payload}) => {
@@ -29,6 +32,15 @@ const _reducer = createReducer(
             isAuthenticated: false,
             user: null,
             error: payload.error
+        };
+    }),
+    on(authActions.AuthLogoutAction, (state) => {
+        console.log('from AuthLoginAction!');
+        return {
+            ...state,
+            isAuthenticated: false,
+            user: null,
+            error: null
         };
     })
 

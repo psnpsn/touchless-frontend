@@ -10,7 +10,7 @@ import { GlobalConstants } from 'src/app/global';
 export class ComplianceService {
 
   http: HttpClient;
-  private path = GlobalConstants.api + 'compliance/compliance/';
+  private path = 'http://localhost:8092/compliance/';
 
   constructor(http: HttpClient) {
     this.http = http;

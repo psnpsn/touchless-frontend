@@ -10,7 +10,7 @@ import { GlobalConstants } from 'src/app/global';
 export class TapreadService {
 
   http: HttpClient;
-  private path = GlobalConstants.api + 'tapread/tapread/';
+  private path = 'http://localhost:8091/tapread/';
 
   constructor(http: HttpClient) {
     this.http = http;

@@ -33,7 +33,8 @@ export class AuthService {
       'Accept': 'application/json',
       'Authorization' : 'Basic ' + btoa('angular-app' + ':' + 'iosys')
     });
-    return this.http.post('http://localhost:8090/oauth/token', data, {headers: reqHeader}).pipe( tap( (jsonResp) => {
+    return this.http.post('http://localhost:8090/oauth/token', data, {headers: reqHeader}).pipe(
+      tap( (jsonResp) => {
       if (jsonResp.error == null) {
         loginInfoReturn = {
           access_token : jsonResp.access_token,
@@ -41,14 +42,16 @@ export class AuthService {
           expires_in : jsonResp.expires_in,
           scope : jsonResp.scope,
         };
-        localStorage.setItem('access_token', jsonResp.access_token);
-        localStorage.setItem('refresh_token', jsonResp.refresh_token);
-        localStorage.setItem('expires_in', jsonResp.expires_in);
-        localStorage.setItem('scope', jsonResp.scope);
+        // localStorage.setItem('access_token', jsonResp.access_token);
+        // localStorage.setItem('refresh_token', jsonResp.refresh_token);
+        // localStorage.setItem('expires_in', jsonResp.expires_in);
+        // localStorage.setItem('scope', jsonResp.scope);
+        console.log('From auth.service.ts obtainToken() AUTH SUCCESS');
         console.log(loginInfoReturn);
         loginDataSubject.next(loginInfoReturn);
+        localStorage.setItem('username', loginData.username);
       } else {
-        console.log('error in authentication');
+        console.log('From auth.service.ts obtainToken() AUTH ERROR');
         console.log(jsonResp.error);
         loginDataSubject = jsonResp;
       }
